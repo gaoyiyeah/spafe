@@ -155,12 +155,10 @@ def weight_smoothing(R_tilde, Q_tilde, nfilts=128, N=4):
     S_tilde = np.zeros_like(R_tilde)
     for m in range(R_tilde.shape[0]):
         for l in range(R_tilde.shape[1]):
-            l1 = max(l - N, 1)
-            l2 = min(l + N, L)
+            l1 = max(l - N, 0)
+            l2 = min(l + N, L - 1)
             # compute smoothing output
-            S_tilde[m, l] = (1 / float(l2 - l1 + 1)) * sum(
-                [R_tilde[m, lprime] / Q_tilde[m, lprime] for lprime in range(l1, l2)]
-            )
+            S_tilde[m, l] = np.average(np.divide(R_tilde[m, l1:l2 + 1], Q_tilde[m, l1:l2 + 1]))
 
     return S_tilde
 
