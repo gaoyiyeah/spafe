@@ -298,7 +298,7 @@ def pncc(
                                     (Default is 0.025).
         win_hop           (float) : step between successive windows in sec.
                                     (Default is 0.01).
-        win_type          (float) : window type to apply for the windowing.
+        win_type            (str) : window type to apply for the windowing.
                                     (Default is "hamming").
         nfilts              (int) : the number of filters in the filter bank.
                                     (Default is 40).
