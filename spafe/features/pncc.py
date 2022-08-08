@@ -308,13 +308,13 @@ def pncc(
                                     (Default is 0).
         high_freq           (int) : highest band edge of mel filters (Hz).
                                     (Default is samplerate/2).
-        scale              (str)  : monotonicity behavior of the filter banks.
+        scale               (str) : monotonicity behavior of the filter banks.
                                     (Default is "constant").
         dct_type            (int) : type of DCT used.
                                     (Default is 2).
         lifter              (int) : apply liftering if specifid.
                                     (Default is 0).
-        normalize           (int) : apply normalization if approach specifid.
+        normalize           (str) : apply normalization if approach specifid.
                                     (Default is None).
         fbanks    (numpy.ndarray) : filter bank matrix.
                                     (Default is None).
